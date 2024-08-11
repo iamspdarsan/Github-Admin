@@ -1,18 +1,10 @@
-import { Octokit } from "octokit";
-
-const octakit = new Octokit({ auth: process.env.GITHUB_TOKEN });
-
-const {
-  repos: { listForAuthenticatedUser },
-} = octakit.rest;
-
 function _makeGroupByOwner(data) {
   const result = {};
 
   data.forEach((repo) => {
     const owner = repo.owner.login;
 
-    if (result[owner] === null) {
+    if (result[owner] === undefined) {
       result[owner] = [];
     }
 
@@ -22,7 +14,15 @@ function _makeGroupByOwner(data) {
   return result;
 }
 
-export async function listRepoRemote() {
+async function listRepoRemote() {
+  const { Octokit } = await import("@octokit/rest");
+
+  const octakit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+
+  const {
+    repos: { listForAuthenticatedUser },
+  } = octakit.rest;
+
   const { data } = await listForAuthenticatedUser({
     username: "iamspdarsan",
     type: "all",
@@ -32,13 +32,13 @@ export async function listRepoRemote() {
   return _makeGroupByOwner(data);
 }
 
-export function listRepoLocal() {
+function listRepoLocal() {
   const { data } = JSON.parse(readFileSync("out.json", { encoding: "utf8" }));
 
   return _makeGroupByOwner(data);
 }
 
-export function dumpToLocal() {
+function dumpToLocal() {
   listRepoRemote()
     .then((content) => {
       writeFileSync("out.json", JSON.stringify(content, null, 2), {
@@ -47,3 +47,5 @@ export function dumpToLocal() {
     })
     .catch(console.error);
 }
+
+module.exports = { listRepoRemote, listRepoLocal, dumpToLocal };

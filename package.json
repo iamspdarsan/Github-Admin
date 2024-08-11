@@ -1,0 +1,9 @@
+{
+  "name": "github-admin",
+  "repository": "https://github.com/darsan-in/Github-Admin.git",
+  "author": "PRIYADARSAN S <iamspdarsan@gmail.com>",
+  "devDependencies": {
+    "@octokit/rest": "^21.0.1",
+    "libsodium-wrappers": "^0.7.14"
+  }
+}
