@@ -1,12 +1,15 @@
-import { Octokit } from "octokit";
+const { listRepoRemote } = require("./list_repo");
+const { readFileSync } = require("fs");
 
-const octakit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+async function addFile(owner, repoName, destPath, content, message) {
+  const { Octokit } = await import("@octokit/rest");
 
-const {
-  repos: { createOrUpdateFileContents },
-} = octakit.rest;
+  const octakit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
-export default function addFile(owner, repoName, destPath, content, message) {
+  const {
+    repos: { createOrUpdateFileContents },
+  } = octakit.rest;
+
   createOrUpdateFileContents({
     repo: repoName,
     owner: owner,
@@ -17,3 +20,22 @@ export default function addFile(owner, repoName, destPath, content, message) {
     author: { name: "DARSAN", email: "hello@darsan.in" },
   });
 }
+
+async function main() {
+  const groupedRepolists = await listRepoRemote();
+
+  const content = readFileSync("consistent-desc.yaml", {
+    encoding: "base64",
+  });
+
+  const destPath = ".github/workflows/consistent-desc.yaml";
+  const commitMsg = "End-User meta WF added";
+
+  Object.keys(groupedRepolists).forEach((username) => {
+    groupedRepolists[username].forEach((repoName) => {
+      addFile(username, repoName, destPath, content, commitMsg);
+    });
+  });
+}
+
+main();
