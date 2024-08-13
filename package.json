@@ -5,5 +5,23 @@
   "devDependencies": {
     "@octokit/rest": "^21.0.1",
     "libsodium-wrappers": "^0.7.14"
-  }
+  },
+  "dependencies": {
+    "marked": "^14.0.0",
+    "node-html-parser": "^6.1.13"
+  },
+  "homepage": "",
+  "description": "Github-Admin is a collection of boilerplate code for performing CRUD operations on GitHub repositories. Built with the @octokit/rest library, it simplifies tasks such as creating, updating, and deleting repositories using the GitHub REST API. ",
+  "keywords": [
+    "github",
+    "crud",
+    "boilerplate",
+    "octokit",
+    "api",
+    "repositories",
+    "management",
+    "code",
+    "automation",
+    "utilities"
+  ]
 }
