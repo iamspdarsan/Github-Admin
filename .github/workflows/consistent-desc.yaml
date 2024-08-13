@@ -17,11 +17,11 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4.0.2
         with:
-          node-version: "22"
+          node-version: "20"
 
       - name: Install dependencies
         run: |
-          npm install node-html-parser marked @octokit/rest --save
+          npm install node-html-parser marked @octokit/rest -S
 
       - name: Download Hero program
         run: |
