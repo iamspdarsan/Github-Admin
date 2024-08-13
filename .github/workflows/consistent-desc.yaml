@@ -21,7 +21,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install --production node-html-parser marked @octokit/rest
+          npm install --omit=dev node-html-parser marked @octokit/rest --global
 
       - name: Download Hero program
         run: |
