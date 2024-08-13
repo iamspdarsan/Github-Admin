@@ -11,17 +11,21 @@
     "node-html-parser": "^6.1.13"
   },
   "homepage": "",
-  "description": "Github-Admin is a collection of boilerplate code for performing CRUD operations on GitHub repositories. Built with the @octokit/rest library, it simplifies tasks such as creating, updating, and deleting repositories using the GitHub REST API. ",
+  "description": "Github-Admin is a streamlined collection of boilerplate code designed for performing CRUD operations on GitHub repositories. Utilizing the power of the @octokit/rest library, it simplifies tasks like creating, updating, and deleting repositories through the GitHub REST API, making repository management more efficient for developers.",
   "keywords": [
     "github",
-    "crud",
-    "boilerplate",
+    "repository management",
+    "crud operations",
     "octokit",
-    "api",
-    "repositories",
-    "management",
-    "code",
-    "automation",
-    "utilities"
+    "rest api",
+    "github api",
+    "ci/cd pipelines",
+    "github actions",
+    "automated workflows",
+    "team management",
+    "access control",
+    "permissions",
+    "github repositories",
+    "github rest api"
   ]
 }
