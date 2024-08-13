@@ -1,5 +1,5 @@
 const { listRepoRemote } = require("./list_repo");
-
+const { spawn } = require("child_process");
 const sodium = require("libsodium-wrappers");
 
 async function encryptSecret(publicKey, secret) {
@@ -40,11 +40,33 @@ async function addSecret(owner, repoName) {
 async function main() {
   const groupedRepolists = await listRepoRemote();
 
-  Object.keys(groupedRepolists).forEach((username) => {
+  /* Object.keys(groupedRepolists).forEach((username) => {
     groupedRepolists[username].forEach((repoName) => {
       addSecret(username, repoName);
     });
-  });
+  }); */
+
+  /* sodium is not working properly in nodejs so python binding*/
+  try {
+    const pythonProcess = spawn("python", [
+      "add_secret.py",
+      JSON.stringify(groupedRepolists),
+    ]);
+
+    pythonProcess.stdout.on("data", (data) => {
+      console.log(`Python stdout: ${data}`);
+    });
+
+    pythonProcess.stderr.on("data", (data) => {
+      console.error(`Python stderr: ${data}`);
+    });
+
+    pythonProcess.on("close", (code) => {
+      console.log(`Python process exited with code ${code}`);
+    });
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 main();

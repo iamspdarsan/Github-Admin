@@ -2,6 +2,7 @@ import http.client
 import json
 import os
 from base64 import b64encode
+from sys import argv
 
 from nacl import encoding, public
 
@@ -16,7 +17,12 @@ def encrypt(public_key: str, secret_value: str) -> str:
 
 
 
-def add_repo_secret(owner:str, repo:str, secret_name:str, secret:str, key_id:str):
+def add_repo_secret(owner:str, repo:str):
+    key_id,publicKey = get_public_key(owner,repo).values()
+  
+    secretName = "META_UPDATE_KEY"
+    secret = encrypt(publicKey,os.getenv('META_UPDATE_KEY'))
+
     conn = http.client.HTTPSConnection("api.github.com")
         
     headers = {
@@ -31,7 +37,7 @@ def add_repo_secret(owner:str, repo:str, secret_name:str, secret:str, key_id:str
         "key_id": key_id
     })
     
-    url = f"/repos/{owner}/{repo}/actions/secrets/{secret_name}"
+    url = f"/repos/{owner}/{repo}/actions/secrets/{secretName}"
     conn.request("PUT", url, body=payload, headers=headers)
     
     response = conn.getresponse()
@@ -72,15 +78,14 @@ def get_public_key(owner:str, repo:str):
         return None
 
 def main():
-  owner = 'darsan-in'
-  repoName = 'Github-Admin'
-
-  key_id,publicKey = get_public_key(owner,repoName).values()
-  
-  secretName = "META_UPDATE_KEY"
-  secret = encrypt(publicKey,os.getenv('META_UPDATE_KEY'))
-
-  add_repo_secret(owner,repoName,secretName,secret,key_id)
-
+    try:
+        groupedRepoList:dict = json.loads(argv[1])
+    except:
+        print('parameter missing')
+        return
+         
+    for username,repoList in groupedRepoList.items():
+        for repoName in repoList:
+            add_repo_secret(username,repoName)
 
 main()
