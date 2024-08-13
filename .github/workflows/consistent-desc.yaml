@@ -32,6 +32,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.META_UPDATE_KEY }}
           REPO_META: ${{ github.repository }}
         run: |
+          echo "Key here"
+          echo GITHUB_TOKEN
           node update-meta.js
 
       - name: Commit and push changes
