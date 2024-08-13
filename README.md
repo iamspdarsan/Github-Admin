@@ -1,50 +1,29 @@
 <div align="center">
 
-# [Title] - [short desc]
+# Github-Admin: Collection of GitHub CRUD Boilerplate Code
 
-<p id="intro">[This is a placeholder paragraph. Here some introductory text or describe the content that will eventually go in this section. This text is meant to give a sense of how the final content will look in the design.]
+<p id="intro">Github-Admin is a collection of boilerplate code for performing CRUD operations on GitHub repositories. Built with the @octokit/rest library, it simplifies tasks such as creating, updating, and deleting repositories using the GitHub REST API.
 </p>
 
 ### Supported Platforms
 
-[![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)]()
 [![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)]()
 [![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)]()
 [![Node JS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)]()
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)]()
-[![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)]()
 
 ---
-
-[uname-holder/reponame-holder] [npm-name-holder] [wf-holder] - for test&build
 
 <p>
 
 <span>
-  <a href="https://github.com/uname-holder/reponame-holder/commits/main">
-    <img src="https://img.shields.io/github/last-commit/uname-holder/reponame-holder?display_timestamp=committer&style=for-the-badge&label=Updated%20On" alt="GitHub last commit"/>
+  <a href="https://github.com/darsan-in/Github-Admin/commits/main">
+    <img src="https://img.shields.io/github/last-commit/darsan-in/Github-Admin?display_timestamp=committer&style=for-the-badge&label=Updated%20On" alt="GitHub last commit"/>
   </a>
 </span>
 
 <span>
   <a href="">
-    <img src="https://img.shields.io/github/commit-activity/m/uname-holder/reponame-holder?style=for-the-badge&label=Commit%20Activity" alt="GitHub commit activity"/>
-  </a>
-</span>
-
-</p>
-
-<p>
-
-<span>
-  <a href="https://github.com/uname-holder/reponame-holder/actions/workflows/wf-holder.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/uname-holder/reponame-holder/wf-holder.yml?style=for-the-badge&label=Build%20Status" alt="GitHub Actions Build Status"/>
-  </a>
-</span>
-
-<span>
-  <a href="https://github.com/uname-holder/reponame-holder/actions/workflows/wf-holder.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/uname-holder/reponame-holder/wf-holder.yml?style=for-the-badge&label=Test%20Status" alt="GitHub Actions Test Status"/>
+    <img src="https://img.shields.io/github/commit-activity/m/darsan-in/Github-Admin?style=for-the-badge&label=Commit%20Activity" alt="GitHub commit activity"/>
   </a>
 </span>
 
@@ -56,13 +35,13 @@
 
 <span>
   <a href="LICENSE">
-    <img src="https://img.shields.io/github/license/uname-holder/reponame-holder?style=for-the-badge&label=License" alt="GitHub License"/>
+    <img src="https://img.shields.io/github/license/darsan-in/Github-Admin?style=for-the-badge&label=License" alt="GitHub License"/>
   </a>
 </span>
 
 <span>
-  <a href="https://github.com/uname-holder/reponame-holder/releases">
-    <img src="https://img.shields.io/github/v/release/uname-holder/reponame-holder?include_prereleases&sort=date&display_name=tag&style=for-the-badge&label=Latest%20Version" alt="GitHub Release"/>
+  <a href="https://github.com/darsan-in/Github-Admin/releases">
+    <img src="https://img.shields.io/github/v/release/darsan-in/Github-Admin?include_prereleases&sort=date&display_name=tag&style=for-the-badge&label=Latest%20Version" alt="GitHub Release"/>
   </a>
 </span>
 
@@ -71,8 +50,8 @@
 <p>
 
 <span>
-  <a href="https://www.codefactor.io/repository/github/uname-holder/reponame-holder/issues/main">
-    <img src="https://img.shields.io/codefactor/grade/github/uname-holder/reponame-holder?style=for-the-badge&label=Code%20Quality%20Grade" alt="CodeFactor Grade"/>
+  <a href="https://www.codefactor.io/repository/github/darsan-in/Github-Admin/issues/main">
+    <img src="https://img.shields.io/codefactor/grade/github/darsan-in/Github-Admin?style=for-the-badge&label=Code%20Quality%20Grade" alt="CodeFactor Grade"/>
   </a>
 </span>
 
@@ -84,13 +63,7 @@
 
 <span>
   <a href="">
-    <img src="https://img.shields.io/npm/d18m/npm-name-holder?style=for-the-badge&label=Downloads%20On%20NPM" alt="NPM Downloads"/>
-  </a>
-</span>
-
-<span>
-  <a href="">
-    <img src="https://img.shields.io/github/stars/uname-holder/reponame-holder?style=for-the-badge&label=Stars" alt="GitHub Repo stars"/>
+    <img src="https://img.shields.io/github/stars/darsan-in/Github-Admin?style=for-the-badge&label=Stars" alt="GitHub Repo stars"/>
   </a>
 </span>
 
@@ -120,25 +93,30 @@
 
 - [Installation - Step-by-Step Guide](#installation---step-by-step-guide-)
 - [Usage](#usage)
-- [In-Action](#in-action-)
 
 - [License](#license-%EF%B8%8F)
 - [Contributing to Our Project](#contributing-to-our-project-)
-- [Website](#website-)
 
 - [Contact Information](#contact-information)
 - [Credits](#credits-)
 
 ## Features and Benefits ✨
 
-- [f1]
-- [f2]
-- [fn]
+- **add_secret.js**: Manage and add secrets to repositories.
+- **create_file.js**: Create new files within a repository.
+- **delete_file.js**: Delete files from a repository.
+- **list_repo.js**: List all repositories associated with a user or organization.
+- **read_file.js**: Read content from files within a repository.
+- **trigger_wf.js**: Trigger workflows and actions in a repository.
+- **wf_perm.js**: Manage workflow permissions.
 
 ## Use Cases ✅
 
-- [usecase 1]
-- [use case 2]
+- Automate GitHub repository setup
+- Implement custom repository management tools
+- Integrate repository CRUD operations into CI/CD pipelines
+- Develop GitHub management applications
+- Enhance repository automation scripts
 
 ---
 
@@ -158,30 +136,72 @@ Thank you for being part of this journey. Your support means the world to us. �
 
 ## Installation - Step-by-Step Guide 🪜
 
-[Installation instructions here]
+- **Step 1:** Clone this repo.
 
-- **Step 1:**
-- **Step 2:**
-- **Step 3:**
-- **Step 4:**
-- **Step 5:**
+```bash
+git clone https://github.com/darsan-in/Github-Admin.git
+```
+
+- **Step 2:** Install Node JS if not installed already. Follow this page https://nodejs.org/en/download/package-manager/current
+
+- **Step 3:** Create [personal access token](https://github.com/settings/tokens) and save it in system environment variable as `GITHUB_TOKEN`.
+
+- **Step 4:** Open terminal execute this command
+
+```bash
+npm install
+```
+
+- **Step 5:** Now you can run program of your choice.
 
 ## Usage
 
-- [purpose heading]
-  [Demonstration here]
+- **Triggering action On all repository simultaneously.**
 
-```bash
-demo
+```js
+async function main() {
+  const repoNames = listRepoRemote();
+
+  const ignoreList = [".github"];
+
+  let actionCount = 0;
+
+  for (const owner of Object.keys(repoMeta)) {
+    for (const repoName of repoMeta[owner]) {
+      if (!ignoreList.includes(repoName.toLowerCase())) {
+        try {
+          await triggerWorkflow(owner, repoName);
+
+          actionCount += 1;
+        } catch (err) {
+          console.log(err);
+        }
+      }
+    }
+  }
+  console.log("Action triggerd on ", actionCount, "repos");
+}
 ```
 
-## In-Action 🤺
+- **Add secret to all your repository simultaneously.**
 
-[video] or [gif] or [image]
+```js
+async function main() {
+  const groupedRepolists = await listRepoRemote();
+
+  Object.keys(groupedRepolists).forEach((username) => {
+    groupedRepolists[username].forEach((repoName) => {
+      addSecret(username, repoName);
+    });
+  });
+}
+
+main();
+```
 
 ## License ©️
 
-This project is licensed under the [Apache License 2.0 or GNU General Public License v3.0 or MIT](LICENSE).
+This project is licensed under the [Apache License 2.0](LICENSE).
 
 ## Contributing to Our Project 🤝
 
@@ -195,17 +215,13 @@ We deeply appreciate everyone who contributes or raises issues—your efforts ar
 
 Thank you for being part of this journey!
 
-## Website 🌐
-
-<a id="url" href="https://darsan.in">[https://darsan.in]</a>
-
 ## Contact Information
 
 For any questions, please reach out via hello@darsan.in or [LinkedIn](https://www.linkedin.com/in/darsan-in/).
 
 ## Credits 🙏🏻
 
-[credits to lib maintainers/creators]
+Thanks to [Keegan Campbell](https://github.com/kfcampbell), [Nick Floyd](https://github.com/nickfloyd), [Gregor Martynus](https://github.com/gr2m) and all maintainers of `@octokit/rest`
 
 ---
 
@@ -278,10 +294,14 @@ For any questions, please reach out via hello@darsan.in or [LinkedIn](https://ww
 #### Topics
 
 <ul id="keywords">
-
-<li>A</li>
-<li>B</li>
-<li>C</li>
-<li>D</li>
-
+<li>GitHub</li>
+<li>CRUD</li>
+<li>Boilerplate</li>
+<li>Octokit</li>
+<li>API</li>
+<li>Repositories</li>
+<li>Management</li>
+<li>Code</li>
+<li>Automation</li>
+<li>Utilities</li>
 </ul>
