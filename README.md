@@ -221,7 +221,7 @@ For any questions, please reach out via hello@darsan.in or [LinkedIn](https://ww
 
 ## Credits 🙏🏻
 
-Thanks to [Keegan Campbell](https://github.com/kfcampbell), [Nick Floyd](https://github.com/nickfloyd), [Gregor Martynus](https://github.com/gr2m) and all maintainers of `@octokit/rest`
+Special thanks to [Keegan Campbell](https://github.com/kfcampbell), [Nick Floyd](https://github.com/nickfloyd), [Gregor Martynus](https://github.com/gr2m) and all maintainers of @octokit/rest for their contributions to the underlying foundation library.
 
 ---
 
@@ -294,24 +294,18 @@ Thanks to [Keegan Campbell](https://github.com/kfcampbell), [Nick Floyd](https:/
 #### Topics
 
 <ul id="keywords">
-<li>GitHub API</li>
-<li>CRUD operations</li>
-<li>Repository management</li>
-<li>Octokit</li>
-<li>REST API</li>
-<li>GitHub automation</li>
-<li>GitHub repositories</li>
-<li>API integration</li>
-<li>Repository setup</li>
-<li>OAuth authentication</li>
-<li>Error handling</li>
-<li>CI/CD integration</li>
-<li>Project management</li>
-<li>Boilerplate code</li>
-<li>Automation tools</li>
-<li>Developer tools</li>
-<li>GitHub organization</li>
-<li>API tools</li>
-<li>Repository creation</li>
-<li>Repository deletion</li>
+<li>github</li>
+<li>repository management</li>
+<li>crud operations</li>
+<li>octokit</li>
+<li>rest api</li>
+<li>github api</li>
+<li>ci/cd pipelines</li>
+<li>github actions</li>
+<li>automated workflows</li>
+<li>team management</li>
+<li>access control</li>
+<li>permissions</li>
+<li>github repositories</li>
+<li>github rest api</li>
 </ul>
