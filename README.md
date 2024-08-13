@@ -2,7 +2,7 @@
 
 # Github-Admin: Collection of GitHub CRUD Boilerplate Code
 
-<p id="intro">**Github-Admin** is a streamlined collection of boilerplate code designed to simplify the process of performing CRUD (Create, Read, Update, Delete) operations on GitHub repositories. Built with the powerful `@octokit/rest` library, this tool enables developers to effortlessly manage their repositories using the GitHub REST API. Whether you're creating new repositories, updating existing ones, or removing those that are no longer needed, Github-Admin takes the complexity out of repository management.</p>
+<p id="intro">Github-Admin is a streamlined collection of boilerplate code designed for performing CRUD operations on GitHub repositories. Utilizing the power of the @octokit/rest library, it simplifies tasks like creating, updating, and deleting repositories through the GitHub REST API, making repository management more efficient for developers.</p>
 
 ### Supported Platforms
 
