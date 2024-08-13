@@ -1,6 +1,6 @@
 const { listRepoRemote } = require("./list_repo");
 const { readFileSync } = require("fs");
-const { loadFile } = require("./read_file");
+const { getSha } = require("./get_last_commit_sha");
 
 async function addFile(owner, repoName, destPath, content, message, sha) {
   const { Octokit } = await import("@octokit/rest");
@@ -26,38 +26,18 @@ async function addFile(owner, repoName, destPath, content, message, sha) {
 async function main() {
   const groupedRepolists = await listRepoRemote();
 
-  const cresteemRME = readFileSync("crm-rme.md", {
-    encoding: "utf8",
+  const wftContent = readFileSync("wft.yaml", {
+    encoding: "base64",
   });
 
-  const darsanRME = readFileSync("d-rme.md", {
-    encoding: "utf8",
-  });
-
-  const destPath = "README.md";
-  const commitMsg = "Readme template appended";
+  const destPath = ".github/workflows/consistent-desc.yaml";
+  const commitMsg = "End-User meta workflow updated";
 
   Object.keys(groupedRepolists).forEach((username) => {
-    groupedRepolists[username].forEach((repoName) => {
-      loadFile(username, repoName, destPath)
-        .then(([oldContent, sha]) => {
-          const newContent = username === "cresteem" ? cresteemRME : darsanRME;
+    groupedRepolists[username].forEach(async (repoName) => {
+      const sha = await getSha(username, repoName, destPath);
 
-          const finalContent =
-            newContent +
-            "\n\n" +
-            Buffer.from(oldContent, "base64").toString("utf8");
-
-          addFile(
-            username,
-            repoName,
-            destPath,
-            Buffer.from(finalContent, "utf8").toString("base64"),
-            commitMsg,
-            sha
-          );
-        })
-        .catch(console.error);
+      addFile(username, repoName, destPath, wftContent, commitMsg, sha);
     });
   });
 }
