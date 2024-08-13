@@ -11,7 +11,6 @@ on:
 jobs:
   meta-update:
     runs-on: ubuntu-latest
-    environment: bot
     steps:
       - uses: actions/checkout@v4.1.7
 
